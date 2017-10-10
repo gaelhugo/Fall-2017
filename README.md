@@ -1,4 +1,3 @@
-# Parsons Fall 2017
 D+TM #57 @Parsons Fall 2017
 
 # LEV SERGUEIEVITCH IN MY POCKET
@@ -6,6 +5,7 @@ Create a musical toolbox by combining a augmented matchbox connected to a smartp
 
 # REQUIRED HARDWARE
   - Adafruit HUZZAH32 - ESP32 Feather
+  - Adafruit ALS-PT19 Analog Light Sensor Breakout
   - Lithium Ion (LiIon) battery 3.7V 500 mA
 
 # REQUIRED LIBRARY
