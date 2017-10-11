@@ -95,7 +95,8 @@ class SynthPad {
     this.synthActive = true;
     this.oscillator = this.myAudioContext.createOscillator();
     this.gainNode = this.myAudioContext.createGain();
-    this.oscillator.type = 'triangle';
+    // sine, square, sawtooth, triangle,custom
+    this.oscillator.type = 'square';
     this.gainNode.connect(this.myAudioContext.destination);
     this.oscillator.connect(this.gainNode);
     this.updateFrequency(event);

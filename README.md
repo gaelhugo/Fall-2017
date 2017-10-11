@@ -21,3 +21,6 @@ Create a musical toolbox by combining a augmented matchbox connected to a smartp
 
 # REQUIRED ONLINE TOOL
   - JS Minifier (http://www.minifier.org/)
+
+# MORE INFO ON AUDIO SYNTHESIS 
+  - https://modernweb.com/audio-synthesis-in-javascript/
