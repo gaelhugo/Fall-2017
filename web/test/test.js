@@ -1,38 +1,45 @@
-var SocketConnection = function() {
-  this.connection;
-  this.IP = document.body.getAttribute('data-IP');
-  this.init();
-};
-SocketConnection.prototype = {
-  init: function() {
+'use strict';
+class SocketConnection {
+  constructor() {
+    this.connection;
+    this.IP = document.body.getAttribute('data-IP');
+    this.init();
+  };
+
+  init() {
     window.WebSocket = window.WebSocket || window.MozWebSocket;
     window.WebSocket ? this.initConnection() : alert('Change browser please');
-  },
-  initConnection: function() {
+  };
+
+  initConnection() {
     console.log('initConnection');
     this.connection = new WebSocket('ws://' + this.IP + ':81/');
     this.connection.onopen = this.onOpen.bind(this);
     this.connection.onerror = this.onError.bind(this);
     this.connection.onmessage = this.onMessage.bind(this);
-  },
-  onOpen: function() {
+  };
+
+  onOpen() {
     console.log('websocket connection ok');
-  },
-  onError: function(n) {
+  };
+
+  onError(n) {
     console.log('!!', n);
-  },
-  onMessage: function(n) {
+  };
+
+  onMessage(n) {
     try {
-      var o = JSON.parse(n.data);
+      let o = JSON.parse(n.data);
       document.body.innerHTML += o.luminosity + '<br/>';
       console.log(o);
     } catch (e) {
-      return void console.log('Bad JSON format');
+      console.log('Bad JSON format', e);
     }
-  }
+  };
 };
 
 function launch(n) {
   new SocketConnection();
 };
+
 window.addEventListener('DOMContentLoaded', launch);
