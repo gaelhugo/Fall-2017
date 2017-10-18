@@ -1,7 +1,6 @@
 'use strict';
 class SocketConnection {
   constructor() {
-    this.connection;
     this.IP = document.body.getAttribute('data-IP');
     this.init();
   };
